@@ -161,19 +161,23 @@
 
   const chips = [...document.querySelectorAll(".filter-chip")];
   const cards = [...document.querySelectorAll(".combo-card")];
+  const notationSection = document.getElementById("notation");
   const sections = [...document.querySelectorAll("main > .section")];
   const emptyState = document.getElementById("emptyState");
   const backTop = document.getElementById("backTop");
 
   const applyFilter = (filter) => {
     let visibleCards = 0;
+    const showNotation = filter === "all" || filter === "notation";
 
     cards.forEach(card => {
       const categories = (card.dataset.category || "").split(" ");
-      const visible = filter === "all" || categories.includes(filter);
+      const visible = filter !== "notation" && (filter === "all" || categories.includes(filter));
       card.hidden = !visible;
       if (visible) visibleCards += 1;
     });
+
+    notationSection.hidden = !showNotation;
 
     sections.forEach(section => {
       const sectionCards = [...section.querySelectorAll(".combo-card")];
@@ -182,7 +186,7 @@
       }
     });
 
-    emptyState.style.display = visibleCards ? "none" : "block";
+    emptyState.style.display = visibleCards || showNotation ? "none" : "block";
   };
 
   chips.forEach(chip => {

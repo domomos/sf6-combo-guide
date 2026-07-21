@@ -12,6 +12,10 @@ window.CHARACTER_DATA = {
       "label": "すべて"
     },
     {
+      "id": "notation",
+      "label": "表記"
+    },
+    {
       "id": "basic",
       "label": "基本"
     },
@@ -136,4 +140,3 @@ window.CHARACTER_DATA = {
   ],
   "entries": []
 };
-
