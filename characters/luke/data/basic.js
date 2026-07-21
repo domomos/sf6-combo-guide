@@ -306,8 +306,20 @@ window.CHARACTER_DATA.entries.push(
       "text": "高火力"
     }
   ],
-  "notes": [
-    "画面端が近すぎる場合は、中フラ後の位置関係が崩れやすいため端ルートへ切り替えます。"
+  "followups": [
+    {
+      "label": "セットプレイ",
+      "text": "前ステ → 歩き投げ または 膝"
+    },
+    {
+      "label": "起き攻め",
+      "text": "投げ または 2弱P → 2中P"
+    },
+    {
+      "label": "メモ1",
+      "tone": "warn",
+      "text": "ジャンプ強P → 2強Pまででヒット確認をして、ガードされていたら中弾でも撃っときましょう。"
+    }
   ],
   "routes": [
     {
@@ -315,9 +327,8 @@ window.CHARACTER_DATA.entries.push(
       "steps": [
         "ジャンプ強P",
         "2強P",
-        "JST中フラ",
-        "DR 5強P",
-        "JST強フラ"
+        "JST弱フラ",
+        "強フラ"
       ]
     }
   ]
