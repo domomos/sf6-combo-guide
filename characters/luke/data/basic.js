@@ -17,6 +17,16 @@ window.CHARACTER_DATA.entries.push(
       "tone": "good"
     }
   ],
+  "followups": [
+    {
+      "label": "セットプレイ",
+      "text": "前ステ → 膝"
+    },
+    {
+      "label": "起き攻め",
+      "text": "投げ または 2弱P → 2中P"
+    }
+  ],
   "notes": [
     "弱フラ後は前ステから起き攻めへ。距離とヒット数でつながり方が変わるため、実戦では2発確認が安定です。"
   ],
@@ -51,6 +61,16 @@ window.CHARACTER_DATA.entries.push(
       "tone": "good"
     }
   ],
+  "followups": [
+    {
+      "label": "セットプレイ",
+      "text": "中足"
+    },
+    {
+      "label": "起き攻め",
+      "text": "投げ または 2中P または シミー"
+    }
+  ],
   "notes": [
     "弱フラ止めよりダメージ・ドライブゲージ回収が増え、そのまま端起き攻めに移れます。"
   ],
@@ -83,6 +103,16 @@ window.CHARACTER_DATA.entries.push(
     {
       "text": "ノーゲージ",
       "tone": "good"
+    }
+  ],
+  "followups": [
+    {
+      "label": "セットプレイ",
+      "text": "前ステ → 膝"
+    },
+    {
+      "label": "起き攻め",
+      "text": "投げ または 2弱P → 2中P"
     }
   ],
   "notes": [
@@ -123,10 +153,24 @@ window.CHARACTER_DATA.entries.push(
       "text": "運び"
     }
   ],
-  "callouts": [
+  "followups": [
     {
+      "label": "セットプレイ",
+      "text": "前ステ → 歩き投げ または 膝"
+    },
+    {
+      "label": "起き攻め",
+      "text": "投げ または 2弱P → 2中P"
+    },
+    {
+      "label": "メモ1",
       "tone": "warn",
       "text": "中フラが最大溜めになってもJST弱フラはつながります。弱フラまで最大溜めになったら、強フラではなく中フラ締めに切り替えます。"
+    },
+    {
+      "label": "メモ2",
+      "tone": "warn",
+      "text": "理想は「2中K または 2中P → CR 2中P」の「2中P」まででヒット確認を頑張る。ガードされていたらコンボをせずに投げや打撃（2中P）をしたい。"
     }
   ],
   "routes": [
@@ -148,6 +192,57 @@ window.CHARACTER_DATA.entries.push(
         "最大溜め中フラ",
         "JST弱フラ",
         "中フラ"
+      ]
+    }
+  ]
+}
+);
+
+window.CHARACTER_DATA.entries.push(
+{
+  "id": "luke-basic-04-2",
+  "section": "basic",
+  "categories": [
+    "basic"
+  ],
+  "title": "中足・2中Pラッシュ基本2",
+  "subtitle": "ノーチェイサー締めの安定ルート",
+  "tags": [
+    {
+      "text": "中央"
+    },
+    {
+      "text": "3ゲージ",
+      "tone": "warn"
+    },
+    {
+      "text": "安定"
+    }
+  ],
+  "followups": [
+    {
+      "label": "セットプレイ",
+      "text": "前ステ → 膝"
+    },
+    {
+      "label": "起き攻め",
+      "text": "投げ または 2弱P → 2中P"
+    },
+    {
+      "label": "メモ1",
+      "tone": "warn",
+      "text": "中足・2中Pラッシュ基本が難しい場合はこっち。"
+    }
+  ],
+  "routes": [
+    {
+      "label": null,
+      "steps": [
+        "2中K または 2中P",
+        "CR 2中P",
+        "2強P",
+        "JST中フラ",
+        "ノーチェイサー"
       ]
     }
   ]

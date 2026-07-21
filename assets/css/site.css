@@ -236,6 +236,18 @@ details[open] .open-mark { transform: rotate(45deg); }
   cursor: pointer;
 }
 .copy-btn.copied { color: var(--good); border-color: rgba(84, 224, 162, .4); }
+.followup-list { display: grid; gap: 8px; margin-top: 12px; }
+.followup-item {
+  padding: 10px 12px;
+  border-left: 3px solid var(--accent);
+  border-radius: 10px;
+  background: rgba(98, 214, 255, .06);
+}
+.followup-item h4 { margin: 0; color: var(--accent); font-size: .78rem; }
+.followup-item p { margin: 3px 0 0; color: #dcedf6; font-size: .88rem; }
+.followup-item.warn { border-left-color: var(--warn); background: rgba(255, 202, 106, .07); }
+.followup-item.warn h4 { color: var(--warn); font-size: .74rem; }
+.followup-item.warn p { color: #ffe7b4; font-size: .82rem; line-height: 1.55; }
 .note { margin: 12px 0 0; color: var(--muted); font-size: .9rem; }
 .callout {
   margin-top: 12px;

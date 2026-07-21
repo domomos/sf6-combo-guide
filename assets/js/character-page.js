@@ -37,6 +37,9 @@
           throw new Error(`stepsを1件以上指定してください: ${entry.id}.routes[${routeIndex}]`);
         }
       });
+      if (entry.followups && (!Array.isArray(entry.followups) || entry.followups.some(followup => !followup.label || !followup.text))) {
+        throw new Error(`followupsはlabelとtextを持つ配列で指定してください: ${entry.id}`);
+      }
       entryIds.add(entry.id);
     });
   };
@@ -46,6 +49,26 @@
   const renderTags = (tags = []) => tags.length
     ? `<div class="meta-row">${tags.map(tag => `<span class="tag ${escapeHtml(tag.tone || "")}">${escapeHtml(tag.text)}</span>`).join("")}</div>`
     : "";
+
+  const renderFollowups = (followups = [], notes = []) => {
+    const memoCount = followups.filter(followup => String(followup.label || "").startsWith("メモ")).length;
+    const items = [
+      ...followups,
+      ...notes.map((text, index) => ({
+        label: `メモ${memoCount + index + 1}`,
+        tone: "warn",
+        text
+      }))
+    ];
+
+    return items.length
+      ? `<div class="followup-list">${items.map(followup => `
+      <div class="followup-item ${escapeHtml(followup.tone || "")}">
+        <h4>${escapeHtml(followup.label)}</h4>
+        <p>${escapeHtml(followup.text)}</p>
+      </div>`).join("")}</div>`
+      : "";
+  };
 
   const routeCopyText = (route) => {
     const prefix = route.label ? `${route.label}：\n` : "";
@@ -81,7 +104,7 @@
         <div class="card-body">
           ${renderTags(entry.tags)}
           ${(entry.routes || []).map(renderRoute).join("")}
-          ${(entry.notes || []).map(note => `<p class="note">${escapeHtml(note)}</p>`).join("")}
+          ${renderFollowups(entry.followups, entry.notes)}
           ${(entry.callouts || []).map(callout => `<div class="callout ${escapeHtml(callout.tone || "")}">${escapeHtml(callout.text)}</div>`).join("")}
         </div>
       </details>

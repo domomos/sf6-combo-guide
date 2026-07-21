@@ -17,6 +17,11 @@ window.CHARACTER_DATA.entries.push({
       steps: ["始動技", "つなぎ1", "つなぎ2", "締め技"]
     }
   ],
+  followups: [
+    { label: "セットプレイ", text: "締め後の行動" },
+    { label: "起き攻め", text: "主な択" },
+    { label: "メモ1", tone: "warn", text: "重要な補足" }
+  ],
   notes: ["距離・用途・注意点などの補足。"],
   callouts: [
     { tone: "warn", text: "特に重要な注意点がある場合のみ記載。" }

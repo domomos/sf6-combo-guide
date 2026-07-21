@@ -30,6 +30,11 @@ window.CHARACTER_DATA.entries.push({
       ]
     }
   ],
+  followups: [
+    { label: "セットプレイ", text: "締め後の行動" },
+    { label: "起き攻め", text: "主な択" },
+    { label: "メモ1", text: "重要な補足" }
+  ],
   notes: [
     "補足説明"
   ]
@@ -47,6 +52,8 @@ window.CHARACTER_DATA.entries.push({
 | `categories` | 任意 | 絞り込みボタンに対応する分類 |
 | `title` | 必須 | カード見出し |
 | `routes` | 必須 | 1件以上の `steps` を持つコンボルート |
-| `notes` / `callouts` | 任意 | 補足・注意事項 |
+| `followups` | 任意 | セットプレイ・起き攻め・メモなど、見出し付きの補足。メモには `tone: "warn"` を指定するとオレンジ・小さめで表示 |
+| `notes` | 任意 | 補足。カード内でオレンジ・小さめの「メモ」として表示 |
+| `callouts` | 任意 | 特に強調する注意事項 |
 
 `templates/combo-entry.template.js` を複製して内容を書き換えるのが安全です。
